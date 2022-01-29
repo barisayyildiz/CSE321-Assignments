@@ -1,0 +1,28 @@
+This is the pseudocode
+Question 5.A
+
+function partition(arr, left, right):
+	pivot <- arr[right]
+	pIndex <- right
+	while left <= right:
+		while arr[left] < pivot:
+			if left == len(arr)-1:
+				break
+			left <- left + 1
+		while right >= 0 and arr[right] > pivot:
+			right <- right - 1
+		if left < right:
+			temp <- arr[left]
+			arr[left] <- arr[right]
+			arr[right] <- temp
+	arr[pIndex] <- arr[left]
+	arr[left] <- arr[pIndex]
+	return left
+
+function testCase(gifts, boxes):
+	for i in range(len(gifts)):
+		if gifts[i] != boxes[i]:
+			return False
+	return True
+
+
